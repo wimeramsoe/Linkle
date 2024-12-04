@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "linkle"
+version = "0.0.1"
+description = "The backend for the Linkle application"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.1.0"
+flask-cors = "^5.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
