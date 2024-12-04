@@ -1,0 +1,7 @@
+body {
+  width: 100vw;
+  max-width: 768px; /* Define your mobile width */
+  margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
