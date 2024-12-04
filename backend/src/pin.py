@@ -1,5 +1,5 @@
 ﻿class Pin:
-    def __init__(self, id: int, name: str, lat: float, long: float):
+    def __init__(self, id: int, name: str, lat: float, long: float) -> None:
         self.id = id
         self.name = name
         self.lat = lat

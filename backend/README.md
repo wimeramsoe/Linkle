@@ -1,3 +1,3 @@
 ﻿to start backend:
 
-poetry run flask --app src\<API ENDPOINT FILE>.py run -p <PORTNUMBER>
+poetry run flask --app src\api_util.py run -p 5000
