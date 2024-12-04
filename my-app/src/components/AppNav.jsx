@@ -4,8 +4,8 @@ import BathroomPage from "./BathroomPage";
 function AppNav() {
     return (
         <>
-            {/*<SimpleMap />*/}
-            <BathroomPage />
+            <SimpleMap />
+            {/*<BathroomPage />*/}
         </>
     );
 }
