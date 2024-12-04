@@ -7,10 +7,11 @@ class Gender(Enum):
     Unisex = 3
 
 class Bathroom:
-    def __init__(self, id = 0, address = '', gender: Gender = Gender.Male, id_access = False, numb_stalls = 0,
+    def __init__(self, id = 0, name = '', address = '', gender: Gender = Gender.Male, id_access = False, numb_stalls = 0,
                  numb_urinals = 0, water_fountain = False, bottle_filler = False, needs_payment = False,
                  rating = False, ada_access = False, diaper_change = False) -> None:
         self.id = id
+        self.name = name
         self.address = address
         self.gender = gender
         self.id_access = id_access
@@ -26,6 +27,7 @@ class Bathroom:
     def serialize(self) -> dict:
         bathroom_body = {
             "id" : self.id,
+            "name" : self.name,
             "address" : self.address,
             "gender" : self.gender.name,
             "id_access" : self.id_access,
