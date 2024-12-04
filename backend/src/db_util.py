@@ -12,6 +12,7 @@ def get_bathroom(id) -> Bathroom:
     doc = bathrooms.find_one({"bathroom_id": id})
     return Bathroom(
         doc["bathroom_id"],
+        doc["name"],
         doc["address"],
         Gender[doc["gender"]],
         doc["id_access"],
