@@ -16,6 +16,7 @@ def get_bathroom(id) -> Bathroom:
         Gender[doc["gender"]],
         doc["id_access"],
         doc["numb_stalls"],
+        doc["numb_urinals"],
         doc["water_fountain"],
         doc["bottle_filler"],
         doc["needs_payment"],
@@ -40,6 +41,8 @@ def main():
     pins = get_pins()
     for item in pins:
         print(item.serialize())
+
+    print(get_bathroom(2).serialize())
 
 if __name__ == "__main__":
     main()
