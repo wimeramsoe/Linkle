@@ -6,6 +6,7 @@ import L from "leaflet"; // Import leaflet
 import { fetchPins } from "../api/api.js";
 import image from "../images/img.png";
 import { Button } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const SimpleMap = () => {
     const mapRef = useRef(null);
@@ -69,14 +70,16 @@ const SimpleMap = () => {
                             <Popup>
                                 <b>{pin.name}</b>
                                 <br />
-                                <Button
-                                    variant="danger"
-                                    style={{
-                                        width: "150px", // Set the width of the button
-                                        height: "30px", // Set the height of the button
-                                        fontSize: "12px",
-                                    }}
-                                >View Details</Button>
+                                <Link to={`/bathroom/${pin.id}`}>
+                                    <Button
+                                        variant="danger"
+                                        style={{
+                                            width: "150px", // Set the width of the button
+                                            height: "30px", // Set the height of the button
+                                            fontSize: "12px",
+                                        }}
+                                    >View Details</Button>
+                                </Link>
                             </Popup>
                         </Marker>
                     ))
