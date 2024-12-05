@@ -1,2 +1,3 @@
-start run_front.bat
 start run_back.bat
+cd my-app
+npm start
