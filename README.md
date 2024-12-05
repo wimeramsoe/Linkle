@@ -1,5 +1,7 @@
 # To Run:
 
+## You need both NodeJS and Python installed to run this program
+
 open a terminal in the directory
 run `./build.bat`
 run `./run.bat`
