@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+
 function SearchBar() {
     const [searchText, setSearchText] = useState("");
 
@@ -34,12 +35,14 @@ function SearchBar() {
                 style={{
                     width: "100%",
                     padding: "10px",
+                    height: "45px",
                     fontSize: "16px",
                     border: "1px solid #ccc",
                     borderRadius: "4px",
                 }}
             />
         </form>
+
     );
 }
 

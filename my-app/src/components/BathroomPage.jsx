@@ -1,5 +1,5 @@
 import SearchBar from "./SearchBar";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import { fetchBathroomDetails } from "../api/api.js";
 import React, { useEffect, useState } from "react";
 import {Button, Col, Image, Row} from "react-bootstrap";
@@ -50,6 +50,22 @@ function BathroomPage() {
 
     return (
         <div>
+            <Link to={`/`} style={{textDecoration: "none"}}>
+                <Button
+                    variant="light"
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        fontSize: "25px",
+                        top: "10px",
+                        left: "4px",
+                        position: "absolute",
+                        borderRadius: "4px",
+                        height : "45px",
+                        width : "45px"
+                    }}
+                >←</Button>
+            </Link>
             <SearchBar/>
             <br/>
             <br/>
@@ -60,10 +76,11 @@ function BathroomPage() {
                     <Image src="https://via.placeholder.com/150" rounded alt="Image of buidling"/>
                 </Col>
                 <Col>
-                    <p>Rating: {rating}</p>
+                    <p style={{ fontSize: "28px" }}>☆☆☆☆☆</p>
                     <p>{address}</p>
                 </Col>
             </Row>
+            <br/>
             <Row>
                 <Col>
                     <ul>
