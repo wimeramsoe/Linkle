@@ -7,6 +7,7 @@ import {Button, Col, Image, Row} from "react-bootstrap";
 
 function BathroomPage() {
     const { pinId } = useParams(); // Get the id parameter from the URL
+    const [image, setImage] = useState("");
     const [ada_access, setAda_access] = useState(false);
     const [address, setAddress] = useState("");
     const [bottle_filler, setBottle_filler] = useState(false);
@@ -26,6 +27,7 @@ function BathroomPage() {
             try {
                 console.log("Fetching bathroom details for ID:", pinId);
                 const response = await fetchBathroomDetails(pinId); // Fetch data from the API
+                setImage(response.image);
                 setAda_access(response.ada_access);
                 setAddress(response.address);
                 setBottle_filler(response.bottle_filler);
@@ -73,7 +75,7 @@ function BathroomPage() {
             <h1>{name}</h1>
             <Row>
                 <Col>
-                    <Image src="https://via.placeholder.com/150" rounded alt="Image of buidling"/>
+                    <Image src={image} rounded alt="Image of buidling"/>
                 </Col>
                 <Col>
                     <p style={{ fontSize: "28px" }}>☆☆☆☆☆</p>
