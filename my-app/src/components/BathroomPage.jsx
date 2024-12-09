@@ -27,7 +27,7 @@ function BathroomPage() {
             try {
                 console.log("Fetching bathroom details for ID:", pinId);
                 const response = await fetchBathroomDetails(pinId); // Fetch data from the API
-                setImage(response.image);
+                //setImage(response.image);
                 setAda_access(response.ada_access);
                 setAddress(response.address);
                 setBottle_filler(response.bottle_filler);
