@@ -33,6 +33,11 @@ run `./build.bat`
 if you've already installed the needed packages and just want to run:  
 run `./run.bat`  
 
+When you can view the website to get the full picture of how our project is 
+supposed to look go to inspect on your browser and change the device to a phone.
+If you don't know how to inspect on your browser, you can right-click on the page and click inspect. 
+Then you can click on the device icon on the top left of the inspect window and change the device to a phone.
+
 When closing the program, ensure that you terminate both the frontend and backend via `Ctrl-C` rather than just closing the window.  
 
 If you want to get rid of the python libraries that were installed, run these commands:  
