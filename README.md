@@ -3,12 +3,12 @@
 ## You need both NodeJS and Python installed to run this program  
 
 
-To run this program:  
-open a terminal in the directory
+### To run this program:  
+open a terminal in the directory  
 run `./start.bat`  
 
 
-Other things:  
+### Other things:  
 if you'd like to just install the needed packages:  
 run `./build.bat`  
 
