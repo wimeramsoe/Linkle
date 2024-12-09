@@ -3,6 +3,7 @@ import {Link, useParams} from "react-router-dom";
 import { fetchBathroomDetails } from "../api/api.js";
 import React, { useEffect, useState } from "react";
 import {Button, Col, Image, Row} from "react-bootstrap";
+import image from "../images/building.png";
 
 
 function BathroomPage() {
@@ -27,7 +28,7 @@ function BathroomPage() {
             try {
                 console.log("Fetching bathroom details for ID:", pinId);
                 const response = await fetchBathroomDetails(pinId); // Fetch data from the API
-                //setImage(response.image);
+                setImage(image);
                 setAda_access(response.ada_access);
                 setAddress(response.address);
                 setBottle_filler(response.bottle_filler);
