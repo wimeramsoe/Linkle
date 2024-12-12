@@ -68,18 +68,21 @@ const SimpleMap = () => {
                             icon={customMarker}
                         >
                             <Popup>
-                                <b>{pin.name}</b>
-                                <br />
-                                <Link to={`/bathroom/${pin.id}`}>
-                                    <Button
+                                <div style={{ textAlign: "center" }}>
+                                    <b>{pin.name}</b>
+                                    <br />
+                                    <Link to={`/bathroom/${pin.id}`}>
+                                        <Button
                                         variant="danger"
                                         style={{
-                                            width: "150px", // Set the width of the button
-                                            height: "30px", // Set the height of the button
-                                            fontSize: "12px",
+                                        width: "150px", // Set the width of the button
+                                        height: "30px", // Set the height of the button
+                                        fontSize: "12px",
+                                        marginTop: "5px", // Add some margin to separate the button from the text
                                         }}
-                                    >View Details</Button>
-                                </Link>
+                                        >View Details</Button>
+                                    </Link>
+                                </div>
                             </Popup>
                         </Marker>
                     ))
