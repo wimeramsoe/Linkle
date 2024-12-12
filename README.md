@@ -7,14 +7,7 @@ opens up a popup that takes you to the bathroom information pane
 which then shows you bathroom information related to the bathroom. 
 We built a backend using python that connects to MongoDB which holds
 pin information and bathroom information that the front ends calls to 
-retrieve the data. 
-
-### Fit Criteria To Use Based Off The Feature We Have Implemented: 
-- 80 percent of users who have never used Linkle shall be able to find a bathroom using a bathroom pin in less than 15 minutes.
-- Bathroom data should be accurate, and every bathroom page must contain an image and a correct rating score based off reviews. (We haven't got images working yet...)
-
-
-
+retrieve the data.
 
 # Instructions:  
 

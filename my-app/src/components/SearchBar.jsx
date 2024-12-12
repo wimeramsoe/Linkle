@@ -1,22 +1,48 @@
-import React, {useState} from "react";
-
+import React, { useEffect, useState } from "react";
+import { fetchPins } from "../api/api";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
     const [searchText, setSearchText] = useState("");
+    const [bathrooms, setBathrooms] = useState([]);
+    const [filteredBathrooms, setFilteredBathrooms] = useState([]);
+    const navigate = useNavigate();
 
     const handleSearchChange = (e) => {
-        setSearchText(e.target.value);
+        const input = e.target.value;
+        setSearchText(input);
+
+        // Filter bathrooms based on input
+        const filtered = bathrooms.filter((bathroom) =>
+            bathroom.name.toLowerCase().includes(input.toLowerCase())
+        );
+        setFilteredBathrooms(filtered);
     };
 
-    const handleSearchSubmit = (e) => {
-        e.preventDefault();
-        console.log("Search query:", searchText);
-        // Handle search logic here (if needed)
+    const handleOptionClick = (pinId) => {
+        // Navigate to the bathroom page using the pinId
+        navigate(`/bathroom/${pinId}`);
     };
+
+    // Fetch all bathroom data
+    useEffect(() => {
+        const fetchAndSetPins = async () => {
+            try {
+                const response = await fetchPins(); // Fetch data from the API
+
+                // Convert the object response to an array
+                const pinsArray = Object.values(response); // Object to array of bathroom data
+                setBathrooms(pinsArray);
+            } catch (error) {
+                console.error("Error fetching pins:", error);
+            }
+        };
+
+        fetchAndSetPins();
+    }, []);
 
     return (
-        <form
-            onSubmit={handleSearchSubmit}
+        <div
             style={{
                 position: "absolute",
                 top: "10px",
@@ -27,22 +53,54 @@ function SearchBar() {
                 maxWidth: "400px",
             }}
         >
-            <input
-                type="text"
-                value={searchText}
-                onChange={handleSearchChange}
-                placeholder="⌕Search..."
-                style={{
-                    width: "100%",
-                    padding: "10px",
-                    height: "45px",
-                    fontSize: "16px",
-                    border: "1px solid #ccc",
-                    borderRadius: "4px",
-                }}
-            />
-        </form>
-
+            <form
+                onSubmit={(e) => e.preventDefault()}
+                style={{ marginBottom: "10px" }}
+            >
+                <input
+                    type="text"
+                    value={searchText}
+                    onChange={handleSearchChange}
+                    placeholder="⌕ Search..."
+                    style={{
+                        width: "100%",
+                        padding: "10px",
+                        height: "45px",
+                        fontSize: "16px",
+                        border: "1px solid #ccc",
+                        borderRadius: "4px",
+                    }}
+                />
+            </form>
+            {filteredBathrooms.length > 0 && (
+                <ul
+                    style={{
+                        listStyleType: "none",
+                        padding: "0",
+                        margin: "0",
+                        border: "1px solid #ccc",
+                        borderRadius: "4px",
+                        maxHeight: "200px",
+                        overflowY: "auto",
+                        backgroundColor: "#fff",
+                    }}
+                >
+                    {filteredBathrooms.map((bathroom) => (
+                        <li
+                            key={bathroom.id}
+                            onClick={() => handleOptionClick(bathroom.id)}
+                            style={{
+                                padding: "10px",
+                                cursor: "pointer",
+                                borderBottom: "1px solid #eee",
+                            }}
+                        >
+                            {bathroom.name}
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
     );
 }
 
