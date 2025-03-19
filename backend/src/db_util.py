@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from src.bathroom import Bathroom, Gender
 from src.pin import Pin
 
-connection_string = "mongodb+srv://gagnonl_mongo:plzdonothack@cluster0.wxqwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+connection_string = "no more API key for you :("
 client = MongoClient(connection_string)
 db = client.get_database("linkle")
 bathrooms = db.get_collection("bathrooms")
